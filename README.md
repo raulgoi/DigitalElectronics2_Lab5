@@ -45,4 +45,7 @@ A common cathode seven segment is different from a common anode segment in that 
    	}
 	
 
-   }
+      }
+      
+
+### Code display tens and units of a counter at SSD.
