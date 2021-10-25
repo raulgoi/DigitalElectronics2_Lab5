@@ -10,3 +10,39 @@ Link: (https://github.com/raulgoi/DigitalElectronics2_Lab5)
 There are two types of LED 7-segment displays: common cathode and common anode. The difference between the two displays is the common cathode has all the cathodes of the 7-segments connected directly together and the common anode has all the anodes of the 7-segments connected together.
 When working with a common anode seven segment display, power must be applied externally to the the anode connection that is common to all the segments. Then by applying a ground to a particular segment connection (a-g), the appropriate segment will light up.
 A common cathode seven segment is different from a common anode segment in that the cathodes of all the LEDs are connected together. For the use of this seven segment the common cathode connection must be grounded and power must be applied to appropriate segment in order to illuminate that segment.
+
+## Codes
+
+### Counter to 59
+
+   
+     ISR(TIMER1_OVF_vect)
+     {
+          DDRD=0xFF;    
+	        DDRB=0xFF;	
+	        int x, D, U;  //Declare ports and variables
+       
+       while(1)
+    {  	
+		
+	for (D=0; D<=5; D++) // Accumulate tens 
+	{
+		for (U=0; U<=9; U++)  // Accumulate Units
+		{
+			for (x=0; x<=62; x++)    //Alternate lits
+			{
+				PORTD=0X00;  
+				PORTD=n[U];    
+				PORTB=0b10000000;  
+				_delay_ms(2);   
+				
+				PORTD=0x00;  
+				PORTD=n[D];  
+				PORTB=0b01000000;  
+				_delay_ms(2);   
+		  	}
+		  }
+   	}
+	
+
+   }
