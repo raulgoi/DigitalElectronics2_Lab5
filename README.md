@@ -1,7 +1,9 @@
 # DigitalElectronics2_Lab5
 DISPLAY
 
-## Link to my GitHub:
+## Link to my GitHub and name:
+
+Raúl Gómez Ibáñez
 
 Link: (https://github.com/raulgoi/DigitalElectronics2_Lab5)
 
@@ -49,3 +51,33 @@ A common cathode seven segment is different from a common anode segment in that 
       
 
 ### Code display tens and units of a counter at SSD.
+
+    ISR(TIMER0_OVF_vect)
+       {
+         static uint8_t pos = 0;
+       }
+
+
+    void loop()
+    {
+      for (int U = 0; U < 10; U++)
+         for (int D = 0; D < 5; D++){
+     
+          display_D(D);
+
+      {
+        display_U(U);
+      }
+     }
+
+
+## Flowchart
+
+![Flowchart 2](https://user-images.githubusercontent.com/91128806/138856084-5ee5ca66-11c0-4f3e-8843-fbef738294db.png)
+
+
+
+## Clock Picture
+
+
+![Lab05_image](https://user-images.githubusercontent.com/91128806/138852184-34673bc1-c324-4f2b-a215-439f80d4c6c8.png)
